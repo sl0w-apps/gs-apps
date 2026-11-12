@@ -16,7 +16,7 @@ Pictures in the instrument cluster and the HUD need the Cluster renderer tool. P
 
 One order code unlocks all three apps. The license does not expire. A refund or a chargeback is what turns it off. The apps keep working with no connection.
 
-The activation screen shows a QR code for the shop, a place to type the code from the receipt, and Refresh. Enter the code in any one of the three. When it says licensed, leave the app and open it again: the features start on the next open. The other two apps on the same car use that license too.
+The activation screen is the whole screen until the app is licensed. Type the code from the receipt (it shows as XXXX-XXXX) and press **Activate**. The car is online only while the phone hotspot is on. If the car cannot read its VIN, enter the last 7 characters as well. When it says licensed, the app opens. The other two apps on the same car use that license too. A Garage + Apps code unlocks these apps. A Garage-only code does not.
 
 ## G's Dash
 
