@@ -62,14 +62,14 @@ Home is a row of tiles: **Spelunkr** (channels of programmes), **Phone** (your i
 
 ## Phone mirroring
 
-Needs the **G's TV Mirroring** tool from this same Store source. Open G's TV, tap **Phone**, and while that page is up:
+Needs the **G's TV Mirroring** tool from this same Store source. Open G's TV, tap **Phone** (an iPhone), **Cast** (Android Stream to device, a direct MP4), or **YouTube** (Cast in the YouTube app, or Link with TV code). **Stop** is what turns the receiver off. Leaving the page, or moving the picture to the cluster or the HUD, does not. If the picture stalls it says **Reconnecting…** and keeps the last frame. YouTube plays a normal MP4 from YouTube. A live stream or a members-only video may not start.
 
 1. Keep the car on your iPhone's Personal Hotspot (the same way G's TV gets online).
 2. On the iPhone: Control Centre, Screen Mirroring, then **G's TV**.
 3. Type the code this page shows.
 4. For sound, choose the car's Bluetooth as the iPhone's audio output.
 
-The picture is shown when the car is parked.
+The picture is shown when the car is parked. **Picture** on that page, and Settings, chooses Centre screen, Instrument cluster, or HUD. The choice is kept. Cluster and HUD need the Cluster renderer tool and only work while parked. A guided route gives the cluster back to the directions. The HUD waits while the car's own HUD content is showing.
 
 ## If something is wrong
 
