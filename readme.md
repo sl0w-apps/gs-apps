@@ -27,9 +27,9 @@ Swipe between **Drive**, **Warm-up**, **G-force** and **Tires**. Tap the **G** f
 - **Drive:** shift lights, gear, rpm, speed, drive mode, oil and coolant. The right-hand panel is the G-meter, the music on your phone, or your logo.
 - **G-force:** hold a finger still on it to reset the session peaks.
 - **Tires:** pressures and temperatures when the car reports them.
-- **Theme:** the looks (M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector, Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC, E46, Apex, Jet, Group C, Tuner, Stream). Tap a card to switch at once. Star a look, then tap the gear on Drive to step through the favourites. Some looks have colours on the Theme card. **Follows the look** sets the ambient light to one of the car's 12 colours for that look. Default leaves the car's colour alone.
+- **Theme:** the looks (M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector, Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC, E46, Apex, Jet, Group C, Tuner). Tap a card to switch at once. Star a look, then tap the gear on Drive to step through the favourites. Some looks have colours on the Theme card. **Follows the look** sets the ambient light to one of the car's 12 colours for that look. Default leaves the car's colour alone.
 - **Panel:** one tap steps Drive's panel: G-meter, Music, Logo.
-- **Cluster & HUD:** what the cluster's centre shows (Auto, Logo, Music, Map, Stock) and the HUD (Auto, Theme, Music, Map, Stock). **Theme dials** puts your look's dials on the cluster. E46, iDrive CCC, Apex, Jet, Group C, Tuner and Stream draw a whole cluster of their own there (experimental); the middle, the car's speed-limit and ACC display and the warning lights stay the car's. **Beside the car's HUD** draws yours smaller, on the right, next to the car's own. Stock on both, with theme dials off, puts them back. Theme dials together with a HUD need Cluster renderer 0.5.1 or newer. Map is Waze.
+- **Cluster & HUD:** what the cluster's centre shows (Auto, Logo, Music, Map, Stock) and the HUD (Auto, Theme, Music, Map, Stock). A new install starts on Auto and Auto, with theme dials on. **Theme dials** puts your look's dials on the cluster. E46, iDrive CCC, Apex, Jet, Group C and Tuner draw a whole cluster of their own there (experimental); the middle stays clear for the map or lyrics, and the car's speed-limit, ACC display and warning lights stay the car's. Auto shows the map only while a route is being guided; otherwise the logo is not drawn over Waze. Map keeps the map on. **Beside the car's HUD** draws yours smaller, on the right, next to the car's own. Stock on both, with theme dials off, puts them back. Theme dials together with a HUD need Cluster renderer 0.5.1 or newer. Map is Waze.
 - **Engine & warm-up:** redline, the shift point, Max rpm (Auto follows the redline), and the oil and coolant temperatures Warm-up counts as ready.
 - **Gauges & session:** Max speed (Auto, or a fixed top), oil and coolant as gauges or a warming-up line, the fuel tank size, the G-meter scale, and a reset for the session peaks.
 - **Units:** mph or km/h, °F or °C, psi, bar or kPa. **Show gear in Drive:** Off keeps D; On shows the gear (D3) when the car reports it.
@@ -47,11 +47,11 @@ Tap the **G** for Settings. A tap steps each one:
 - **Cluster & HUD size:** Small, Medium or Large.
 - **HUD:** Lyrics or Off.
 
-The home-screen widget shows the artwork, title and progress while something plays, or the G's Music mark when it does not.
+The home-screen widget, large and small, shows the album art with a progress bar while something plays, or the G's Music mark when it does not.
 
 ## G's TV
 
-Experimental. The picture plays on the centre screen only while the car is parked. If it is not, the screen says video is available when parked.
+Experimental. The picture plays on the centre screen only while the car is parked. If it is not, the screen says video is available when parked. The home-screen widget, large and small, is the G's TV logo.
 
 Home is a row of tiles: **Spelunkr** (channels of programmes), **Phone** (your iPhone's screen), any MP4 links you added, and **Add source**. The **G** opens Settings.
 
