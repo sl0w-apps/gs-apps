@@ -16,7 +16,9 @@ Pictures in the instrument cluster and the HUD need the Cluster renderer tool. P
 
 One order code unlocks all three apps. The license does not expire. A refund or a chargeback is what turns it off. The apps keep working with no connection.
 
-The activation screen is the whole screen until the app is licensed. Type the code from the receipt (it shows as XXXX-XXXX) and press **Activate**. The car is online only while the phone hotspot is on. If the car cannot read its VIN, enter the last 7 characters as well. When it says licensed, the app opens. The other two apps on the same car use that license too. A Garage + Apps code unlocks these apps. A Garage-only code does not.
+The activation screen is the whole screen until the app is licensed. The car reads its own VIN. Type the order code (it shows as XXXX-XXXX) and press **Activate**. The car is online only while the phone hotspot is on. If it could not read the VIN, turn the car on fully; the screen asks the car again by itself, and **Retry** asks at once. When it says licensed, the app opens, and it opens licensed from then on. The other two apps on the same car use that license too. A Garage + Apps code unlocks these apps. A Garage-only code does not.
+
+**Your code:** the order confirmation links to the activation code page. It asks for the order number and the email or phone you used at checkout. The keys on the activation screen are touch keys.
 
 ## G's Dash
 
@@ -25,9 +27,9 @@ Swipe between **Drive**, **Warm-up**, **G-force** and **Tires**. Tap the **G** f
 - **Drive:** shift lights, gear, rpm, speed, drive mode, oil and coolant. The right-hand panel is the G-meter, the music on your phone, or your logo.
 - **G-force:** hold a finger still on it to reset the session peaks.
 - **Tires:** pressures and temperatures when the car reports them.
-- **Theme:** the looks (M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector, Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC, E46, Apex). Tap a card to switch at once. Star a look, then tap the gear on Drive to step through the favourites. Some looks have colours on the Theme card. **Follows the look** sets the ambient light to one of the car's 12 colours for that look. Default leaves the car's colour alone.
+- **Theme:** the looks (M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector, Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC, E46, Apex, Jet, Group C, Tuner, Stream). Tap a card to switch at once. Star a look, then tap the gear on Drive to step through the favourites. Some looks have colours on the Theme card. **Follows the look** sets the ambient light to one of the car's 12 colours for that look. Default leaves the car's colour alone.
 - **Panel:** one tap steps Drive's panel: G-meter, Music, Logo.
-- **Cluster & HUD:** what the cluster's centre shows (Auto, Logo, Music, Map, Stock) and the HUD (Auto, Theme, Music, Map, Stock). **Theme dials** puts your look's dials on the cluster. **Beside the car's HUD** draws yours smaller, on the right, next to the car's own. Stock on both, with theme dials off, puts them back. Theme dials together with a HUD need Cluster renderer 0.5.1 or newer. Map is Waze.
+- **Cluster & HUD:** what the cluster's centre shows (Auto, Logo, Music, Map, Stock) and the HUD (Auto, Theme, Music, Map, Stock). **Theme dials** puts your look's dials on the cluster. E46, iDrive CCC, Apex, Jet, Group C, Tuner and Stream draw a whole cluster of their own there (experimental); the middle, the car's speed-limit and ACC display and the warning lights stay the car's. **Beside the car's HUD** draws yours smaller, on the right, next to the car's own. Stock on both, with theme dials off, puts them back. Theme dials together with a HUD need Cluster renderer 0.5.1 or newer. Map is Waze.
 - **Engine & warm-up:** redline, the shift point, Max rpm (Auto follows the redline), and the oil and coolant temperatures Warm-up counts as ready.
 - **Gauges & session:** Max speed (Auto, or a fixed top), oil and coolant as gauges or a warming-up line, the fuel tank size, the G-meter scale, and a reset for the session peaks.
 - **Units:** mph or km/h, °F or °C, psi, bar or kPa. **Show gear in Drive:** Off keeps D; On shows the gear (D3) when the car reports it.
@@ -71,10 +73,11 @@ The picture is shown when the car is parked.
 
 ## If something is wrong
 
-- **The code is not recognised.** Enter the full code from the receipt. Too many tries asks you to wait, then tap Refresh.
-- **No connection on the activation screen.** A license you already entered stays. Refresh when you are online again.
+- **You do not have the code.** Open the activation code page linked from your order confirmation. It shows the code for your order number and the email or phone from checkout.
+- **The code is not recognised.** Enter the full code, eight characters. Too many tries asks you to wait a few minutes, then press Activate.
+- **No connection on the activation screen.** Turn the phone hotspot on, then press Activate. A license the car already has stays.
+- **It says the code is already on another car.** A code is for one car. Reply to your order email to have it moved.
 - **It says the license is not active.** That is a refund or a chargeback. A new code is a new order.
-- **The code worked but you still see the activation screen.** Leave the app and open it again.
 - **Cluster or HUD is stuck, blank or wrong.** G's Dash, Help, Refresh cluster. Theme dials and a HUD together need Cluster renderer 0.5.1 or newer.
 - **G's Music has no lyrics or artwork.** The car has to be online. The song still shows from what the car is playing.
 - **G's TV will not show a picture.** It plays only while parked. The screen says so when it is not.
