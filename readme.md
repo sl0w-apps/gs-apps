@@ -35,7 +35,7 @@ Swipe between **Drive**, **Warm-up**, **G-force** and **Tires**. Tap the **G** f
 - **Gauges & session:** oil and coolant as gauges or a warming-up line, the fuel tank size, the G-meter scale, and a reset for the session peaks.
 - **Units:** mph or km/h, °F or °C, psi, bar or kPa. **Show gear in Drive:** Off keeps D; On shows the gear (D3) when the car reports it.
 - **Logo:** the home-screen widget, the cluster, and Drive's panel. Default is the G mark. **My GIF** is one you send from your phone: Send a GIF, scan the code, pick a GIF, then Use this GIF on the car. **Logo for:** Everything, Drive mode (Comfort, Sport, Sport+ and any mode the car reports), or Each theme. An empty slot plays the main logo.
-- **Help:** this guide (the QR code), **Refresh cluster** (remakes the logo, dials and HUD if they are stuck, blank or wrong), and remote logs. Logs are sent only after a crash, or when you tap Send logs now, and only when that is turned on.
+- **Help:** this guide (the QR code), **Refresh cluster** (remakes the logo, dials and HUD if they are stuck, blank or wrong), four fix tiles that each ask first, and remote logs. **Reset HUD guard** turns the HUD back on after the Cluster renderer turned it off, **Restart renderer** restarts the Cluster renderer, and **Restart head unit** restarts iDrive (at most once every 10 minutes); these three need the **G's Helper** tool from this same Store source (it starts after the next head-unit restart). **Reset options** puts every G's Dash option back to its default and clears favourite looks, look colours and ambient colours; your GIFs and Waze on cluster's own settings stay. Logs are sent only after a crash, or when you tap Send logs now, and only when that is turned on.
 
 ## G's Music
 
@@ -80,6 +80,7 @@ The picture is shown when the car is parked. **Picture** on that page, and Setti
 - **It says the code is already on another car.** A code is for one car. Reply to your order email to have it moved.
 - **It says the license is not active.** That is a refund or a chargeback. A new code is a new order.
 - **Cluster or HUD is stuck, blank or wrong.** G's Dash, Help, Refresh cluster. Theme dials and a HUD together need Cluster renderer 0.5.1 or newer.
+- **Waze on cluster says "HUD map: Disabled after errors", or Help says the renderer turned the HUD off.** The cluster restarted twice right after the HUD was shown, so the Cluster renderer stopped using the HUD, for every app. It is saved on the unit, so Refresh cluster, restarting G's Dash and restarting the car do not undo it. G's Dash, Help, **Reset HUD guard** does (with G's Helper installed), and so does updating Cluster renderer from the Store. If it keeps coming back, the cluster struggles with the HUD map: try turning off Waze on cluster's Keep HUD map over BMW's pop-ups, or a smaller map. The cluster map is not affected.
 - **G's Music has no lyrics or artwork.** The car has to be online. The song still shows from what the car is playing.
 - **G's TV will not show a picture.** It plays only while parked. The screen says so when it is not.
 - **Phone says to install G's TV Mirroring.** Install that tool from `sl0w-apps/gs-apps`, then open Phone again.
