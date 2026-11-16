@@ -1,87 +1,148 @@
 # G's Apps
 
-G's Dash, G's Music and G's TV for the car's centre screen. This page is static: it does not send or store anything.
+Three apps for the car's centre screen: **G's Dash** (your driver display, on the screen, the instrument cluster and the HUD), **G's Music** (what's playing, with lyrics) and **G's TV** (video while parked). This page is static: it does not send or store anything.
 
 ## Install
 
-In the Store, add the source `sl0w-apps/gs-apps`, then install:
+In the Store, add the source `sl0w-apps/gs-apps`, then install **G's Dash**, **G's Music** and **G's TV**.
 
-- **G's Dash**
-- **G's Music**
-- **G's TV**
+Two free tools from the same source add more:
 
-Pictures in the instrument cluster and the HUD need the Cluster renderer tool. Phone mirroring needs **G's TV Mirroring** from this same source (G's TV asks for it by that name).
+- **Cluster renderer**: needed for anything in the instrument cluster or the HUD.
+- **G's TV Mirroring**: needed to mirror your phone in G's TV.
 
 ## Activate
 
-One order code unlocks all three apps. The license does not expire. A refund or a chargeback is what turns it off. The apps keep working with no connection.
+One order code unlocks all three apps on one car. It does not expire, and the apps work without a connection once activated.
 
-The activation screen is the whole screen until the app is licensed. The car reads its own VIN. Type the order code (it shows as XXXX-XXXX) and press **Activate**. The car is online only while the phone hotspot is on. If it could not read the VIN, turn the car on fully; the screen asks the car again by itself, and **Retry** asks at once. When it says licensed, the app opens, and it opens licensed from then on. The other two apps on the same car use that license too. A Garage + Apps code unlocks these apps. A Garage-only code does not.
+1. Turn on your phone's hotspot so the car is online.
+2. Open any of the apps. Until it is licensed, the activation screen fills the screen and reads the car's VIN by itself.
+3. Type your order code (XXXX-XXXX) and press **Activate**.
 
-**Your code:** the order confirmation links to the activation code page. It asks for the order number and the email or phone you used at checkout. The keys on the activation screen are touch keys.
+The other two apps use the same license. Your code is on the activation code page linked from your order confirmation (it asks for the order number and the email or phone you used). A Garage + Apps code works; a Garage-only code does not.
 
 ## G's Dash
 
-Swipe between **Drive**, **Warm-up**, **G-force** and **Tires**. Tap the **G** for Options. Every Options page has a Dash button back to the dash.
+### The dash
 
-- **Drive:** shift lights, gear, rpm, speed, drive mode, oil and coolant. The right-hand panel is the G-meter, the music on your phone, or your logo.
-- **Vinyl:** a look that puts the music first. Drive shows the song playing on your phone: its artwork, synced lyrics (when LRCLIB has them; else a visualizer), and the song's bar (drag it to move within the song where the car allows). The speed, gear, an LED rev meter and the drive mode sit in the deck on the right. On the cluster, the tonearm is the speedometer, a VU meter shows the revs, and the drive mode lights the 33, 45 or 78 button. Lyrics and artwork need the car online.
-- **G-force:** hold a finger still on it to reset the session peaks.
-- **Tires:** pressures and temperatures when the car reports them.
-- **Theme:** the looks (M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector, Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC, E46, Apex, Jet, Group C, Tuner, Vinyl, GT3, Five Dial). Tap a card to switch at once. Star a look, then tap the gear on Drive to step through the favourites. Some looks have colours on the Theme card. **Follows the look** sets the ambient light to one of the car's 12 colours for that look. Default leaves the car's colour alone.
-- **Panel:** one tap steps Drive's panel: G-meter, Music, Logo. Vinyl has no panel: its Drive is the music. On Apex, Music and Logo take the DRIVE MODE card's place. On E46 the panel is the right air vent: as the G-meter its adjuster tab moves with the g-forces (the g now and the session's best under it); Music or Logo shows in the vent. A tap on E46's hazard switch steps through your favourite looks.
-- **Cluster & HUD:** what the cluster's centre shows (Auto, Logo, Music, Map, Stock) and the HUD (Auto, Theme, Music, Map, Stock). A new install starts on Auto and Auto, with theme dials on. **Theme dials** puts your look's dials on the cluster. E46, iDrive CCC, Jet, Group C, Tuner, Vinyl and GT3 draw a whole cluster of their own there (experimental); the middle stays clear for the map or lyrics and the warning lights stay the car's. Both sides run straight down to the middle, so the car's speed-limit sign and ACC display at the foot of the speedometer are covered while theme dials are on; turn Theme dials off to see them. Auto shows the map only while a route is being guided; otherwise the logo is not drawn over Waze. Map keeps the map on. **Beside the car's HUD** draws yours smaller, on the right, next to the car's own. Stock on both, with theme dials off, puts them back. Theme dials together with a HUD need Cluster renderer 0.5.1 or newer. Map is Waze. Apex and Five Dial, and GT3, E46 and Jet with **Full cluster** on (by default), draw the whole cluster, the middle included: no map, logo, lyrics or G's TV in the middle and Waze's map switched off while they show; with GT3, E46 or Jet, turn Full cluster off for the map window and your pick. Jet's full cluster puts a fighter's pitch ladder in the middle, scrolling with braking and acceleration, with a bank line and bank scale that roll as you corner. Five Dial's HUD is a classic needle tach with small fuel and water gauges either side of the gear. Jet's HUD is a fighter's: the revs scroll along the top like a heading tape, the speed and the revs sit in its two boxes, the pitch ladder rolls and pitches and the flight path marker moves with the g-forces, with G and the gear underneath. While the car is off or switching on or off, G's apps draw nothing on the cluster or the HUD (it comes back a few seconds after the car is on), so the Cluster renderer never turns a display off. If a look's dials make the cluster restart twice in a row, even across a restart of the car, G's Dash leaves the car's own dials there and says so on this page; Refresh cluster, another look, or Theme dials off and on tries them again. If the HUD tiles say the renderer turned the HUD off, or that the dials share the HUD, the Cluster renderer itself stopped using that display after the cluster restarted on it: updating Cluster renderer from the Store undoes it, and until then turning Theme dials off gives the HUD back (in the second case).
-- **Engine & warm-up:** redline, the shift point, and the oil and coolant temperatures Warm-up counts as ready. The tach's scale follows the redline.
-- **Gauges & session:** oil and coolant as gauges or a warming-up line, the fuel tank size, the G-meter scale, and a reset for the session peaks.
-- **Units:** mph or km/h, °F or °C, psi, bar or kPa. **Show gear in Drive:** Off keeps D; On shows the gear (D3) when the car reports it.
-- **Logo:** the home-screen widget, the cluster, and Drive's panel. Default is the G mark. **My GIF** is one you send from your phone: Send a GIF, scan the code, pick a GIF, then Use this GIF on the car. **Logo for:** Everything, Drive mode (Comfort, Sport, Sport+ and any mode the car reports), or Each theme. An empty slot plays the main logo.
-- **Help:** this guide (the QR code), **Refresh cluster** (remakes the logo, dials and HUD if they are stuck, blank or wrong), four fix tiles that each ask first, and remote logs. **Reset HUD guard** turns the HUD back on after the Cluster renderer turned it off, **Restart renderer** restarts the Cluster renderer, and **Restart head unit** restarts iDrive (at most once every 10 minutes); these three need the **G's Helper** tool from this same Store source (it starts after the next head-unit restart). **Reset options** puts every G's Dash option back to its default and clears favourite looks, look colours and ambient colours; your GIFs and Waze on cluster's own settings stay. Logs are sent only after a crash, or when you tap Send logs now, and only when that is turned on. A small check mark in place of the v before the version number (top right of Options) means an official build from G's Apps; Send a GIF works only with a current version.
+Swipe between four pages:
+
+- **Drive**: shift lights, gear, revs, speed, drive mode, oil and coolant, and a panel (see below).
+- **Warm-up**: oil and coolant coming up to temperature.
+- **G-force**: the g-meter and your peaks. Hold a finger still on it to reset the peaks.
+- **Tires**: pressures and temperatures, when the car reports them.
+
+Tap the **G** for Options; every Options page has a **Dash** button back. Tap the gear on Drive to step through your favourite themes.
+
+### Themes
+
+Options > **Theme**. Tap a card to switch at once, star the ones you like, and pick colours on the Theme card where a theme has them. **Follows the look** sets the car's ambient light to match the theme.
+
+Each theme styles the centre screen, the cluster and the HUD together. Cards marked **FULL** draw the whole cluster, the middle included. The others replace the dials on both sides and leave the middle for the map, the logo or lyrics.
+
+| Theme | Style | Whole cluster |
+| --- | --- | --- |
+| M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector | Sports, race, retro digital, sim racing, glow, pixel art, vector lines | No |
+| Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC | A 90s desktop, a pocket console, a getaway, a coin-op racer, a music player, the first iDrive | No |
+| Tuner, Vinyl | 90s tuner dials; the music first (artwork, lyrics, a turntable speedometer) | No |
+| GT3, E46, Jet, Group C, Agent, Synthwave | A GT3 race dash, the E46's orange dials, a fighter jet, an 80s endurance racer, a spy car's gadget dashboard, an 80s neon night drive | Yes, switchable |
+| Apex, Dials, RPG, Blueprint | A modern sport cluster, five classic gauges, a role-playing game's menu, an engineering drawing | Always |
+
+Some themes have a Drive page of their own:
+
+- **GT3** is a lap timer: tap the LAP column as you cross the line each lap to see your lap times and how far ahead or behind your best you are. From a standstill it also times 0-60 mph (0-100 km/h), the quarter mile and 60-0 braking.
+- **RPG** has a minimap of a made-up world (not GPS): your car moves across it as you drive and turns as you corner.
+- **Blueprint** draws the g-forces as a free body diagram, your session's records as a parts list, and oil, water and fuel in section.
+- **Synthwave** is a night drive: your records as an arcade's high scores (tap the session to restart it), the road ahead rolling by at your speed with a wireframe car leaning into the corners, and a neon g-force ring.
+- **Agent** is a mission briefing: your records as a mission log, the g-forces as a blip on a sweeping threat radar, and the car's systems with a status line (ALL CLEAR, SHIFT!, or a warning).
+- **Vinyl** is the song playing on your phone: artwork, synced lyrics or a visualizer, and the song's progress bar.
+- **E46** puts the panel in its right air vent; a tap on its hazard switch steps through your favourites.
+
+### The panel
+
+On Options, **Panel** steps Drive's panel between the **G-meter**, **Music** (what your phone is playing, with artwork) and your **Logo**.
+
+### Cluster & HUD
+
+Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. These need the Cluster renderer tool, version 0.5.1 or newer.
+
+**Cluster (the middle of the cluster):**
+
+- **Auto**: directions during a route, G's TV or G's Music when they play there, otherwise the logo.
+- **Logo**, **Music** (lyrics) or **Map** (Waze) all the time.
+- **Stock**: the car's own.
+
+**HUD:**
+
+- **Auto**: the map during a route, lyrics while a song plays, otherwise your theme.
+- **Theme**, **Music**, **Map** or **Stock** all the time.
+
+**Switches at the top:**
+
+- **Theme dials**: your theme's dials on the cluster. Off gives the car's own dials back.
+- **Beside the car's HUD**: draws your HUD smaller, next to the car's own instead of over it.
+- **Full cluster** (GT3, E46, Jet, Group C, Agent and Synthwave only): on draws the whole cluster; off leaves the middle for your Cluster pick.
+
+Good to know:
+
+- While a whole-cluster theme shows, the middle is the theme's: no map, logo, lyrics or G's TV there, and Waze's map is switched off.
+- With theme dials on, the car's speed-limit sign and cruise-control readout under the speedometer are covered. Turn Theme dials off to see them.
+- Nothing is drawn on the cluster or the HUD while the car switches on or off; it comes back a few seconds after.
+- If a theme makes the cluster restart twice, G's Dash goes back to the car's own dials and says so on this page. **Refresh cluster** (on Help) or another theme tries again.
+
+### Other options
+
+- **Driving**: your redline and shift point, the temperatures Warm-up counts as ready, the fuel tank size, the G-meter's scale, and a reset for your session's peaks.
+- **Units**: mph or km/h, °F or °C, and psi, bar or kPa. **Show gear in Drive** shows D3 instead of D when the car reports the gear.
+- **Logo**: the logo on the home-screen widget, the cluster and Drive's panel. Use the G mark or send your own GIF from your phone (Send a GIF, scan the code). You can set a logo for everything, per drive mode or per theme.
+
+### Help
+
+- The QR code opens this guide.
+- **Refresh cluster** remakes the logo, dials and HUD if they are stuck, blank or wrong.
+- **Reset HUD guard**, **Restart renderer** and **Restart head unit** fix a stuck cluster or HUD. Each asks first and needs the **G's Helper** tool from the same Store source.
+- **Reset options** puts every G's Dash option back to its default. Your GIFs stay.
+- **Remote logs** are sent only after a crash, or when you tap Send logs now, and only while they are turned on.
 
 ## G's Music
 
-Full screen, the music the car is playing from your phone: CarPlay, Android Auto, Bluetooth or USB. Large artwork, synced lyrics or a visualizer, and the song's progress. There are no play buttons. Use your phone, the steering wheel, or the car's media screen. Where the car allows it, drag the bar to move within the song. Nothing playing shows that, not a made-up song. Artwork and lyrics need the car online.
+Full screen, the music the car is playing from your phone (CarPlay, Android Auto, Bluetooth or USB): large artwork, synced lyrics or a visualizer, and the song's progress. Control the music from your phone, the steering wheel or the car's media screen; where the car allows it, drag the bar to move within the song. Artwork and lyrics need the car online.
 
-Tap the **G** for Settings. A tap steps each one:
+Tap the **G** for Settings:
 
-- **Show:** Lyrics (else visualizer), Visualizer, or Nothing.
-- **Cluster (map area):** Lyrics + visualizer, Visualizer only, or Off. G's Dash's Cluster pick can take this area.
-- **Cluster & HUD size:** Small, Medium or Large.
-- **HUD:** Lyrics or Off.
-
-The home-screen widget, large and small, shows the album art with a progress bar while something plays, or the G's Music mark when it does not.
+- **Show**: Lyrics (else a visualizer), Visualizer, or Nothing.
+- **Cluster (map area)**: Lyrics and visualizer, Visualizer only, or Off.
+- **Cluster & HUD size**: Small, Medium or Large.
+- **HUD**: Lyrics or Off.
 
 ## G's TV
 
-Experimental. The picture plays on the centre screen only while the car is parked. If it is not, the screen says video is available when parked. The home-screen widget, large and small, is the G's TV logo.
+Experimental. Video plays on the centre screen only while the car is parked.
 
-Home is a row of tiles: **Spelunkr** (channels of programmes), **Phone** (your iPhone's screen), any MP4 links you added, and **Add source**. The **G** opens Settings.
+- **Spelunkr**: channels of programmes. Guide lists what's on.
+- **Your sources**: a direct MP4 (H.264) link sent from your phone with **Add source** (scan the code). Hold a source to rename, change or remove it.
+- **Cluster** and **HUD** buttons put the picture there, parked only.
+- **Settings**: frame rate, what happens after driving (resume or jump to what's on), and sound (experimental, on by default).
 
-- **Spelunkr:** Play, then channel up and channel down. Guide lists what is on. **After driving:** Resume where I stopped, or Jump to what's on now.
-- **Your sources:** a direct MP4 (H.264) link sent from your phone. Add source shows a QR code and a 6-digit code. The car checks the link before it can be saved. Hold a source to rename it, send a new link, or remove it.
-- **Settings:** At most (GPU video) in frames per second, After driving, and Sound. Sound is experimental and on by default (the car's speakers). Tap Sound for the sound check, including Test sound.
-- **Cluster** and **HUD** buttons on the picture, parked only. A guided route gives the cluster back to the directions.
+### Phone mirroring
 
-## Phone mirroring
+Needs the **G's TV Mirroring** tool. Open G's TV and tap **Phone** (iPhone), **Cast** (Android or a direct MP4) or **YouTube**. For an iPhone:
 
-Needs the **G's TV Mirroring** tool from this same Store source. Open G's TV, tap **Phone** (an iPhone), **Cast** (Android Stream to device, a direct MP4), or **YouTube** (Cast in the YouTube app, or Link with TV code). **Stop** is what turns the receiver off. Leaving the page, or moving the picture to the cluster or the HUD, does not. If the picture stalls it says **Reconnecting…** and keeps the last frame. YouTube plays a normal MP4 from YouTube. A live stream or a members-only video may not start.
-
-1. Keep the car on your iPhone's Personal Hotspot (the same way G's TV gets online).
+1. Keep the car on your iPhone's Personal Hotspot.
 2. On the iPhone: Control Centre, Screen Mirroring, then **G's TV**.
-3. Type the code this page shows.
+3. Type the code the car shows.
 4. For sound, choose the car's Bluetooth as the iPhone's audio output.
 
-The picture is shown when the car is parked. **Picture** on that page, and Settings, chooses Centre screen, Instrument cluster, or HUD. The choice is kept. Cluster and HUD need the Cluster renderer tool and only work while parked. A guided route gives the cluster back to the directions. The HUD waits while the car's own HUD content is showing.
+**Stop** turns the receiver off. **Picture** chooses the centre screen, the instrument cluster or the HUD.
 
 ## If something is wrong
 
-- **You do not have the code.** Open the activation code page linked from your order confirmation. It shows the code for your order number and the email or phone from checkout.
-- **The code is not recognised.** Enter the full code, eight characters. Too many tries asks you to wait a few minutes, then press Activate.
-- **No connection on the activation screen.** Turn the phone hotspot on, then press Activate. A license the car already has stays.
-- **It says the code is already on another car.** A code is for one car. Reply to your order email to have it moved.
-- **It says the license is not active.** That is a refund or a chargeback. A new code is a new order.
-- **Cluster or HUD is stuck, blank or wrong.** G's Dash, Help, Refresh cluster. Theme dials and a HUD together need Cluster renderer 0.5.1 or newer.
-- **Waze on cluster says "HUD map: Disabled after errors", or Help says the renderer turned the HUD off.** The cluster restarted twice right after the HUD was shown, so the Cluster renderer stopped using the HUD, for every app. It is saved on the unit, so Refresh cluster, restarting G's Dash and restarting the car do not undo it. G's Dash, Help, **Reset HUD guard** does (with G's Helper installed), and so does updating Cluster renderer from the Store. If it keeps coming back, the cluster struggles with the HUD map: try turning off Waze on cluster's Keep HUD map over BMW's pop-ups, or a smaller map. The cluster map is not affected.
-- **G's Music has no lyrics or artwork.** The car has to be online. The song still shows from what the car is playing.
-- **G's TV will not show a picture.** It plays only while parked. The screen says so when it is not.
-- **Phone says to install G's TV Mirroring.** Install that tool from `sl0w-apps/gs-apps`, then open Phone again.
-- **Phone says the receiver is not answering.** Restart the car, then open Phone again.
+- **The code is not recognised.** Enter all eight characters. After too many tries, wait a few minutes.
+- **No connection on the activation screen.** Turn the phone's hotspot on, then press Activate.
+- **The code is already on another car.** A code is for one car. Reply to your order email to have it moved.
+- **The license is not active.** That follows a refund or a chargeback.
+- **The cluster or HUD is stuck, blank or wrong.** G's Dash > Help > **Refresh cluster**.
+- **The HUD went back to the car's own and stays there** (Help says the renderer turned the HUD off). Use **Reset HUD guard** on Help (with G's Helper), or update the Cluster renderer from the Store.
+- **No lyrics or artwork in G's Music.** The car has to be online.
+- **No picture in G's TV.** It plays only while parked.
+- **Phone mirroring asks for G's TV Mirroring.** Install it from `sl0w-apps/gs-apps`, then open Phone again.
