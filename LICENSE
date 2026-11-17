@@ -1,0 +1,139 @@
+# G's Apps License
+
+Required Notice: Copyright (c) 2026 sl0w-apps (https://github.com/sl0w-apps)
+
+G's Dash, G's Music, G's TV and everything else in this repository and in the packages built from it (the
+"software") are licensed under the PolyForm Strict License 1.0.0 (below), with the additional permission and
+subject to the conditions in this file, except the third-party parts listed under "Not covered", which keep their
+own licenses. The additional permission and the conditions are part of the terms: the conditions are conditions of
+every license you have for the software.
+
+## In short
+
+This summary is for convenience; the terms below are what count.
+
+- You may install the software as it is and use it on your own car, for noncommercial purposes.
+- You may charge someone for installing it on their car (see "Paid installation").
+- You may not sell, resell, share, publish or otherwise redistribute the software, its code, its artwork or any
+  part of it.
+- You may not change it, take code, artwork, layouts or designs from it, or build anything based on it.
+- You may not remove or alter the credits, put your own name, logo or brand on it, or pass it off as yours.
+- Paid apps need a license key bought for your car, and you may not get around the license check.
+- Only the licensor may sell the software or license it under other terms.
+
+## Additional permission: paid installation
+
+You may charge a fee for installing the software on someone else's car, provided that:
+
+1. you install it unchanged, from the licensor's official source (the G's Apps Store source the licensor
+   publishes), not from a copy;
+2. for a paid app, the car's owner has their own license key for that car, bought from the licensor; and
+3. you tell the car's owner that the software is G's Apps, made by sl0w-apps, and that you did not make it.
+
+This permission covers installation only. It does not allow you to sell or charge for the software itself, to
+bundle it with other products for sale, or to distribute it in any other way.
+
+## Conditions: credits and branding
+
+These conditions apply to everyone, including anyone installing the software for a fee. Breaking one ends your
+licenses as the "Violations" section of the PolyForm Strict License 1.0.0 describes.
+
+1. Keep every credit, copyright notice, license file and "G's" name, mark and logo in the software where it is.
+2. Do not add your own name, logo, brand, watermark or contact details to the software, its screens, its artwork
+   or its packages.
+3. Do not present the software, or any part of it, as made by you or by anyone other than the licensor.
+4. Do not use the "G's Apps", "G's Dash", "G's Music" or "G's TV" names, or the G logo, for anything that is not
+   the licensor's own software. These terms grant no trademark rights.
+
+## Conditions: paid apps and the license check
+
+1. A license key is for the car it was bought for. Do not share, sell, transfer or publish license keys.
+2. Do not bypass, disable, remove, alter, patch, emulate or interfere with the license check, the license server,
+   or any part of the software that checks or enforces a license, and do not help anyone else do so.
+3. Using a paid app without a valid license key for that car is not a permitted purpose.
+
+## The licensor's rights
+
+The licensor keeps all rights in the software not expressly granted here, including the right to sell the
+software, to license it under other terms, and to change these terms for later versions. Nothing in these terms
+limits what the licensor may do with its own software.
+
+## Not covered
+
+These parts are not the licensor's work and keep their own licenses (each license text ships beside the part):
+
+- `kit/`: based on cauliflowermossgrape/idrive7-apps, MIT License (`kit/LICENSE.idrive7-apps`). The code that comes
+  from there stays under the MIT License; the licensor's own changes and additions in `kit/` are under these terms.
+- `kit/runtime/fonts/cjk.json`: a Noto Sans SC subset, SIL Open Font License 1.1 (`kit/runtime/fonts/OFL-NotoSansSC.txt`).
+- The font atlases in `apps/ng_gsdash/data/fonts/`: baked from open fonts under the SIL Open Font License 1.1, and
+  Liberation fonts (their `LICENSE-*.txt` and `NOTICE.txt`).
+- `apps/ng_spotify/vendor/jpeg_decoder.js` (jpeg-js, BSD 3-Clause; its decoder core from pdf.js, Apache License 2.0)
+  and `apps/ng_spotify/vendor/qrcodegen.js` (Project Nayuki, MIT License): see `apps/ng_spotify/LICENSE`.
+- `apps/ng_tv/player/h264.wasm`: FFmpeg's H.264 decoder, GNU LGPL 2.1 or later (`apps/ng_tv/LICENSE`). You may
+  change and replace that one file as the LGPL allows.
+- `licensing/car/gslic_nacl.js`: TweetNaCl 1.0.3, public domain.
+- The licensing server's npm dependencies (`licensing/server/`), each under its own license.
+- The separate tools G's TV Mirroring and G's Helper are not part of this repository; they are GPL-3.0-or-later,
+  with their source in their own repository.
+
+---
+
+# PolyForm Strict License 1.0.0
+
+<https://polyformproject.org/licenses/strict/1.0.0>
+
+## Acceptance
+
+In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+
+## Copyright License
+
+The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose, other than distributing the software or making changes or new works based on the software.
+
+## Patent License
+
+The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+
+## Noncommercial Purposes
+
+Any noncommercial purpose is a permitted purpose.
+
+## Personal Uses
+
+Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+
+## Noncommercial Organizations
+
+Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+
+## Fair Use
+
+You may have "fair use" rights for the software under the law. These terms do not limit them.
+
+## No Other Rights
+
+These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+
+## Patent Defense
+
+If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+
+## Violations
+
+The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+
+## No Liability
+
+***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+
+## Definitions
+
+The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
+
+**You** refers to the individual or entity agreeing to these terms.
+
+**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
+
+**Your licenses** are all the licenses granted to you for the software under these terms.
+
+**Use** means anything you do with the software requiring one of your licenses.
