@@ -170,7 +170,7 @@
     file.arrayBuffer().then(function (ab) {
       return encrypt(st.key, AAD_FILE, ab);
     }).then(function (sealed) {
-      busy('Sending…', 'Uploading ' + (sealed.length < 1048576 ? Math.round(sealed.length / 1024) + ' KB' : (sealed.length / 1048576).toFixed(1) + ' MB') + ', encrypted.');
+      busy('Uploading…', 'Uploading ' + (sealed.length < 1048576 ? Math.round(sealed.length / 1024) + ' KB' : (sealed.length / 1048576).toFixed(1) + ' MB') + ', encrypted.');
       return Promise.all([retry(function () { return upload(st.topic, sealed); }), crypto.subtle.digest('SHA-256', sealed)]).then(function (r) {
         return seal(st.key, { t: 'gif', s: st.topic, v: 1, url: r[0], size: sealed.length, sha256: b64u(r[1]), fit: fit, name: cleanName(file.name) });
       });
@@ -178,7 +178,7 @@
       return retry(function () { return post(st.topic, body); });
     }).then(function (r) {
       sentId = r && r.id;
-      busy('Waiting for the car…', 'Sent. The car picks it up within a few seconds while it shows the code.');
+      busy('Waiting for the car…', 'Uploaded. The car picks it up within a few seconds while it shows the code.');
       var until = Date.now() + WAIT_MS, got = false;
       function loop() {
         if (Date.now() > until) { failWith(got ? 'The car did not use it (no answer).' : 'The car has not picked it up. Is the code still on its screen, and is the car online?'); return null; }
@@ -203,7 +203,7 @@
       }
       return loop();
     }).catch(function (e) {
-      failWith('Could not send it (' + (e && e.message ? e.message : e) + '). Check the phone’s internet and try again.');
+      failWith('Could not upload it (' + (e && e.message ? e.message : e) + '). Check the phone’s internet and try again.');
     });
   }
 
@@ -224,7 +224,7 @@
   // the key leaves the address bar and the history once read
   if (location.hash) history.replaceState(null, '', location.origin + location.pathname);
   if (h.get('v') === '1') {
-    failWith('This copy of the app is out of date and can no longer send a GIF. Install the current version from G\u2019s Apps in the car\u2019s Store.');
+    failWith('This copy of the app is out of date and can no longer upload a GIF. Install the current version from G\u2019s Apps in the car\u2019s Store.');
     return;
   }
   if (h.get('v') === '2') {
