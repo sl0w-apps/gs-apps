@@ -25,8 +25,9 @@ The other two apps use the same license. Your code is on the activation code pag
 
 ### The dash
 
-Swipe between four pages:
+Swipe between five pages (G's Dash opens on Drive):
 
+- **Favourites** (left of Drive): up to eight of your favourite themes. Tap one to switch to it, or tap the **+** box to add the theme on now. The **x** on a card takes it off.
 - **Drive**: shift lights, gear, revs, speed, drive mode, oil and coolant, and a panel (see below).
 - **Warm-up**: oil and coolant coming up to temperature.
 - **G-force**: the g-meter and your peaks. Hold a finger still on it to reset the peaks.
@@ -36,17 +37,19 @@ Tap the **G** for Options; every Options page has a **Dash** button back. Tap th
 
 ### Themes
 
-Options > **Theme**. Tap a card to switch at once, star the ones you like, and pick colours on the Theme card where a theme has them. **Follows the look** sets the car's ambient light to match the theme.
+Options > **Theme**. Tap a card to switch at once, star the ones you like (eight at most), and pick colours on the Theme card where a theme has them. **Follows the theme** sets the car's ambient light to match the theme.
 
 Each theme styles the centre screen, the cluster and the HUD together. Cards marked **FULL** draw the whole cluster, the middle included. The others replace the dials on both sides and leave the middle for the map, the logo or lyrics.
 
 | Theme | Style | Whole cluster |
 | --- | --- | --- |
+| Colors | The car's own stock dials, in one of eight colours | No |
 | M Style, GT, Digital '84, Sim Racing, Lumen, Pixel, Vector | Sports, race, retro digital, sim racing, glow, pixel art, vector lines | No |
 | Desktop '98, Pocket, Heist, Arcade, Pod '04, iDrive CCC | A 90s desktop, a pocket console, a getaway, a coin-op racer, a music player, the first iDrive | No |
 | Tuner, Vinyl | 90s tuner dials; the music first (artwork, lyrics, a turntable speedometer) | No |
 | GT3, E46, Jet, Group C, Agent, Synthwave | A GT3 race dash, the E46's orange dials, a fighter jet, an 80s endurance racer, a spy car's gadget dashboard, an 80s neon night drive | Yes, switchable |
 | Apex, Dials, RPG, Blueprint | A modern sport cluster, five classic gauges, a role-playing game's menu, an engineering drawing | Always |
+| Prototype, Touring, MCF1, E30, MCF1R | Race dashes after real ones: a prototype's boxed display, a touring car's white LCD, an endurance car's amber LCD, a late-80s analog cluster, a steering-wheel LCD with shift lights | Always |
 
 Some themes have a Drive page of their own:
 
@@ -56,6 +59,7 @@ Some themes have a Drive page of their own:
 - **Synthwave** is a night drive: your records as an arcade's high scores (tap the session to restart it), the road ahead rolling by at your speed with a wireframe car leaning into the corners, and a neon g-force ring.
 - **Agent** is a mission briefing: your records as a mission log, the g-forces as a blip on a sweeping threat radar, and the car's systems with a status line (ALL CLEAR, SHIFT!, or a warning).
 - **Vinyl** is the song playing on your phone: artwork, synced lyrics or a visualizer, and the song's progress bar.
+- **Prototype, Touring, MCF1, E30 and MCF1R** show your records (tap the session to restart it), the look's own instrument (a rev trace, a big session timer, a speed trace, the dash clock, or big shift lights) and the G-meter.
 - **E46** puts the panel in its right air vent; a tap on its hazard switch steps through your favourites.
 
 ### The panel
@@ -82,19 +86,22 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 - **Theme dials**: your theme's dials on the cluster. Off gives the car's own dials back.
 - **Beside the car's HUD**: draws your HUD smaller, next to the car's own instead of over it.
 - **Full cluster** (GT3, E46, Jet, Group C, Agent and Synthwave only): on draws the whole cluster; off leaves the middle for your Cluster pick.
+- **Cluster camera fix** (off by default): turn it on if your car has a driver camera over the top middle of the cluster (some M3 and M4 models do). Every whole-cluster theme then draws a little smaller, clear of the camera.
+- **Stay on in other apps** (on by default): keeps your theme's dials and HUD showing while you use another app, for as long as the head unit keeps G's Dash running. Off, the car's own come back a few seconds after you leave G's Dash.
 
 Good to know:
 
 - While a whole-cluster theme shows, the middle is the theme's: no map, logo, lyrics or G's TV there, and Waze's map is switched off.
 - With theme dials on, the car's speed-limit sign and cruise-control readout under the speedometer are covered. Turn Theme dials off to see them.
+- With a split theme (the map in the middle), the map's edges fade softly into the dials, and the car's messages under the map, such as a seat belt or door warning, stay visible.
 - Nothing is drawn on the cluster or the HUD while the car switches on or off; it comes back a few seconds after.
-- If a theme makes the cluster restart twice, G's Dash goes back to the car's own dials and says so on this page. **Refresh cluster** (on Help) or another theme tries again.
+- If a theme makes the cluster restart twice, G's Dash goes back to the car's own dials and says so on this page. **Refresh cluster** (on Help), another theme, or an update of G's Dash tries again.
 
 ### Other options
 
 - **Driving**: your redline and shift point, the temperatures Warm-up counts as ready, the fuel tank size, the G-meter's scale, and a reset for your session's peaks.
-- **Units**: mph or km/h, °F or °C, and psi, bar or kPa. **Show gear in Drive** shows D3 instead of D when the car reports the gear.
-- **Logo**: the logo on the home-screen widget, the cluster and Drive's panel. Use the G mark or send your own GIF from your phone (Send a GIF, scan the code). You can set a logo for everything, per drive mode or per theme.
+- **Units**: mph or km/h, °F or °C, and psi, bar or kPa. **Show gear in Drive** shows D3 instead of D when the car reports the gear. **Time zone**: Car uses the car's own zone; Set lets you pick a UTC offset with − and + if your themes' clocks show the wrong time.
+- **Logo**: the logo on the home-screen widget, the cluster and Drive's panel. Use the G mark or upload your own GIF from your phone (Upload a GIF, scan the code). You can set a logo for everything, per drive mode or per theme.
 
 ### Help
 
