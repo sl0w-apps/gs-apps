@@ -37,7 +37,11 @@ Tap the **G** for Options; every Options page has a **Dash** button back. Tap th
 
 ### Themes
 
-Options > **Theme**. Tap a card to switch at once, star the ones you like (eight at most), and pick colours on the Theme card where a theme has them. **Follows the theme** sets the car's ambient light to match the theme.
+Options > **Theme**. Tap a card to switch at once, star the ones you like (eight at most), and pick colours on the Theme card where a theme has them. Under **Ambient light**, the car's ambient light takes the theme's colour: it's on for every theme unless you turn it off. **Change with theme** switches it on or off for the theme on now. It's kept per theme, and per colour where a theme has colours (Colors in blue can have one, Colors in red another, or none). Where it's off, the car keeps its own colour. Step **Colour** with − and +: **Theme colour** (the theme's own, or the colour you picked where a theme has colours; a white or silver one gives white), Red, Orange, Amber, Yellow, Green, Cyan, Blue, Violet, Pink or White, then BMW's twelve numbered colours. The named colours go to the lights exactly, at the brightness your car uses; on a car whose lights don't answer, only BMW's numbered colours are offered.
+
+Ambient config and IterioDev's Ambient Light can stay installed. If one of them is also setting a colour, the two apps may take turns, and an amber note appears beside **Ambient light**. Tap it for what to change in that app: in Ambient config, tap **Original colour** on its Colour tab, and on its Driving modes tab for each mode that has its own colour; in IterioDev's app, turn its colour and drive-mode colours off.
+
+**Driving modes** (on the Theme page, off by default) gives each driving mode its own theme and colour: Colors in blue for Comfort and red for Sport, say. Turn it on, then tap a mode to give it the theme on now, or just pick a theme while driving in a mode and it's kept for that mode. The theme changes once a mode has been on for 2 seconds, so stepping through the modes doesn't flick the cluster through each one. A mode with no theme keeps whatever is on.
 
 Each theme styles the centre screen, the cluster and the HUD together. Cards marked **FULL** draw the whole cluster, the middle included. The others replace the dials on both sides and leave the middle for the map, the logo or lyrics.
 
@@ -59,8 +63,8 @@ Some themes have a Drive page of their own:
 - **Synthwave** is a night drive: your records as an arcade's high scores (tap the session to restart it), the road ahead rolling by at your speed with a wireframe car leaning into the corners, and a neon g-force ring.
 - **Agent** is a mission briefing: your records as a mission log, the g-forces as a blip on a sweeping threat radar, and the car's systems with a status line (ALL CLEAR, SHIFT!, or a warning).
 - **Vinyl** is the song playing on your phone: artwork, synced lyrics or a visualizer, and the song's progress bar.
-- **Prototype, Touring, MCF1, E30 and MCF1R** show your records (tap the session to restart it), the look's own instrument (a rev trace, a big session timer, a speed trace, the dash clock, or big shift lights) and the G-meter.
-- **E46** puts the panel in its right air vent; a tap on its hazard switch steps through your favourites.
+- **Prototype, Touring, MCF1 and MCF1R** show your records (tap the session to restart it), the look's own instrument (a rev trace, a big session timer, a speed trace, or big shift lights) and the G-meter.
+- **E46 and E30** show the car's two centre air vents and put the panel in the right one; a tap on the hazard switch between them steps through your favourites.
 
 ### The panel
 
@@ -73,7 +77,7 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 **Cluster (the middle of the cluster):**
 
 - **Auto**: directions during a route, G's TV or G's Music when they play there, otherwise the logo.
-- **Logo**, **Music** (lyrics) or **Map** (Waze) all the time.
+- **Logo**, **Music** (lyrics) or **Map** (CarPlay's map; needs the Maps on cluster tool) all the time.
 - **Stock**: the car's own.
 
 **HUD:**
@@ -91,7 +95,7 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 
 Good to know:
 
-- While a whole-cluster theme shows, the middle is the theme's: no map, logo, lyrics or G's TV there, and Waze's map is switched off.
+- While a whole-cluster theme shows, the middle is the theme's: no map, logo, lyrics or G's TV there, and the map is switched off.
 - With theme dials on, the car's speed-limit sign and cruise-control readout under the speedometer are covered. Turn Theme dials off to see them.
 - With a split theme (the map in the middle), the map's edges fade softly into the dials, and the car's messages under the map, such as a seat belt or door warning, stay visible.
 - Nothing is drawn on the cluster or the HUD while the car switches on or off; it comes back a few seconds after.
@@ -149,7 +153,9 @@ Needs the **G's TV Mirroring** tool. Open G's TV and tap **Phone** (iPhone), **C
 - **The code is already on another car.** A code is for one car. Reply to your order email to have it moved.
 - **The license is not active.** That follows a refund or a chargeback.
 - **The cluster or HUD is stuck, blank or wrong.** G's Dash > Help > **Refresh cluster**.
+- **G's Dash isn't full screen** (the car's title bar shows above it, with a dark band under it). If Help says another copy of G's Dash is on the unit, tap that note: restart the head unit, and if it's still there, remove G's Dash in the Store and install it again. If it then starts with no settings, it reads them from the other copy while that copy is there.
 - **The HUD went back to the car's own and stays there** (Help says the renderer turned the HUD off). Use **Reset HUD guard** on Help (with G's Helper), or update the Cluster renderer from the Store.
 - **No lyrics or artwork in G's Music.** The car has to be online.
 - **No picture in G's TV.** It plays only while parked.
 - **Phone mirroring asks for G's TV Mirroring.** Install it from `sl0w-apps/gs-apps`, then open Phone again.
+- **The phone's picture dropped.** The Phone page says why. Pick **G's TV** in Screen Mirroring on the iPhone again. To watch a video, start Screen Mirroring first and play it in the app, rather than using the app's own AirPlay button.
