@@ -90,8 +90,12 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 - **Theme dials**: your theme's dials on the cluster. Off gives the car's own dials back.
 - **Beside the car's HUD**: draws your HUD smaller, next to the car's own instead of over it.
 - **Full cluster** (GT3, E46, Jet, Group C, Agent and Synthwave only): on draws the whole cluster; off leaves the middle for your Cluster pick.
-- **Cluster camera fix** (off by default): turn it on if your car has a driver camera over the top middle of the cluster (some M3 and M4 models do). Every whole-cluster theme then draws smaller, clear of the camera as you see it from the driver's seat, and its background still fills the cluster.
+
+**Switches at the bottom:**
+
 - **Stay on in other apps** (on by default): keeps your theme's dials and HUD showing while you use another app, for as long as the head unit keeps G's Dash running. Off, the car's own come back a few seconds after you leave G's Dash.
+- **Cluster sensor fix** (off by default): turn it on if your car has a driver-attention sensor (a camera) over the top middle of the cluster (some M3 and M4 models do). Every whole-cluster theme then draws smaller, clear of the camera as you see it from the driver's seat, and its background still fills the cluster.
+- **Cover AUTO H icons** (off by default): every theme leaves two small see-through boxes at the top right of the cluster, where the car shows its AUTO H and light icons. On, the theme's background covers them, so you no longer see those two icons.
 
 Good to know:
 
