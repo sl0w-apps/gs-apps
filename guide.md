@@ -77,7 +77,7 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 **Cluster (the middle of the cluster):**
 
 - **Auto**: directions during a route, G's TV or G's Music when they play there, otherwise the logo.
-- **Logo**, **Music** (lyrics) or **Map** (CarPlay's map; needs the Maps on cluster tool) all the time.
+- **Logo**, **Music** (lyrics) or **Map** (Maps on cluster: needs the Maps on cluster tool) all the time.
 - **Stock**: the car's own.
 
 **HUD:**
@@ -96,12 +96,14 @@ Options > **Cluster & HUD** sets what the instrument cluster and the HUD show. T
 - **Stay on in other apps** (on by default): keeps your theme's dials and HUD showing while you use another app, for as long as the head unit keeps G's Dash running. Off, the car's own come back a few seconds after you leave G's Dash.
 - **Cluster sensor fix** (off by default): turn it on if your car has a driver-attention sensor (a camera) over the top middle of the cluster (some M3 and M4 models do). Every whole-cluster theme then draws smaller, clear of the camera as you see it from the driver's seat, and its background still fills the cluster.
 - **Cover AUTO H icons** (off by default): every theme leaves two small see-through boxes at the top right of the cluster, where the car shows its AUTO H and light icons. On, the theme's background covers them, so you no longer see those two icons.
+- **BC button: Cluster pick** (on by default): the BC button on the end of the indicator stalk steps through the Cluster picks above (Auto, Logo, Music, Map, Stock), skipping any that can't show right now. Press it a few times quickly to jump ahead: the cluster changes once, about a second after your last press.
 
 Good to know:
 
 - While a whole-cluster theme shows, the middle is the theme's: no map, logo, lyrics or G's TV there, and the map is switched off.
 - With theme dials on, the car's speed-limit sign and cruise-control readout under the speedometer are covered. Turn Theme dials off to see them.
 - With a split theme (the map in the middle), the map's edges fade softly into the dials, and the car's messages under the map, such as a seat belt or door warning, stay visible.
+- Every theme's dials show the drive mode. On the themes drawn like the car's own dials (Colors, M Style, GT, Digital and the others), it's under the gear's line, and the car's own small fuel and oil gauges stay showing.
 - Nothing is drawn on the cluster or the HUD while the car switches on or off; it comes back a few seconds after.
 - If a theme makes the cluster restart twice, G's Dash goes back to the car's own dials and says so on this page. **Refresh cluster** (on Help), another theme, or an update of G's Dash tries again.
 
@@ -109,14 +111,16 @@ Good to know:
 
 - **Driving**: your redline and shift point, the temperatures Warm-up counts as ready, the fuel tank size, the G-meter's scale, and a reset for your session's peaks.
 - **Units**: mph or km/h, °F or °C, and psi, bar or kPa. **Show gear in Drive** shows D3 instead of D when the car reports the gear. **Time zone**: Car uses the car's own zone; Set lets you pick a UTC offset with − and + if your themes' clocks show the wrong time.
-- **Logo**: the logo on the home-screen widget, the cluster and Drive's panel. Use the G mark or upload your own GIF from your phone (Upload a GIF, scan the code). You can set a logo for everything, per drive mode or per theme.
+- **Logo**: the logo on the home-screen widget, the cluster and Drive's panel. Default is the G mark in your theme's style. Or upload your own GIF or picture from your phone (Upload a GIF or picture, scan the code): a photo or any picture your phone can open is sent as a still. You can set a logo for everything, per drive mode or per theme. Your logo GIFs and pictures share 10 MB (the Logo page shows how much they use), and a GIF over 1.5 MB keeps fewer frames at the same pace. If one won't fit, remove a logo you no longer use and try again.
 
 ### Help
 
 - The QR code opens this guide.
+- **Cluster report** (above the QR code) turns it into a report of what the cluster did: your cluster settings, the renderer's state and the cluster's recent log lines. Scan each code with your phone (tap the code for the next one) and send the text if the cluster ever crashed. It holds no VIN or address.
 - **Refresh cluster** remakes the logo, dials and HUD if they are stuck, blank or wrong.
 - **Reset HUD guard**, **Restart renderer** and **Restart head unit** fix a stuck cluster or HUD. Each asks first and needs the **G's Helper** tool from the same Store source.
-- **Reset options** puts every G's Dash option back to its default. Your GIFs stay.
+- Your settings, favourites and last theme are kept through updates. With **G's Helper** installed they also come back if you remove G's Dash and install it again. If Help says *Settings not backed up*, install G's Helper.
+- **Reset options** puts every G's Dash option back to its default. Your logo GIFs and pictures stay.
 - **Remote logs** are sent only after a crash, or when you tap Send logs now, and only while they are turned on.
 
 ## G's Music
