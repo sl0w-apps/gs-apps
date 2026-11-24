@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; connect-src https://ntfy.sh; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
-<title>Logo: upload a GIF</title>
+<title>Logo: upload a GIF or picture</title>
 <link rel="stylesheet" href="widget.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 
   <section id="code" hidden>
     <h2>Enter the code from the car</h2>
-    <p>The app shows a 6-digit code under the QR code (<b>Logo</b>, <b>Upload a GIF</b>). That GIF is the main Logo, or the driving mode you picked on the car.</p>
+    <p>The app shows a 6-digit code under the QR code (<b>Logo</b>, <b>Upload a GIF or picture</b>). It becomes the main Logo, or the driving mode or theme you picked on the car.</p>
     <label for="digits">Code</label>
     <input id="digits" inputmode="numeric" autocomplete="one-time-code" maxlength="7" placeholder="123 456">
     <button id="code-go">Continue</button>
@@ -23,10 +23,10 @@
   </section>
 
   <section id="form" hidden>
-    <h2>Upload a GIF for the Logo</h2>
-    <p>Pick an animated GIF. The car shows it before you tap Use, for the main Logo or for one driving mode.</p>
-    <label class="pick" for="file"><span id="pick-text">Choose a GIF</span>
-      <input id="file" type="file" accept="image/gif"></label>
+    <h2>Upload a GIF or picture for the Logo</h2>
+    <p id="lead">Pick an animated GIF, a photo or any picture. The car shows it before you tap Use, for the main Logo, a driving mode or a theme.</p>
+    <label class="pick" for="file"><span id="pick-text">Choose a GIF or picture</span>
+      <input id="file" type="file" accept="image/*"></label>
     <div id="preview" class="preview fill" hidden><img id="img" alt="The GIF as it will fill the widget"></div>
     <p id="info" class="small" hidden></p>
     <div id="fit" class="seg" role="radiogroup" aria-label="How it fits the widget" hidden>
@@ -51,10 +51,10 @@
   <section id="fail" hidden>
     <h2>Not uploaded</h2>
     <p id="fail-text"></p>
-    <p class="small">On the car, tap <b>Upload a GIF</b> for a new code and try again.</p>
+    <p class="small">On the car, tap <b>Upload</b> for a new code and try again.</p>
   </section>
 
-  <footer>Static page, no server part: the GIF goes end-to-end encrypted to your car's mailbox on ntfy.sh,
+  <footer>Static page, no server part: your GIF or picture goes end-to-end encrypted to your car's mailbox on ntfy.sh,
     the only server this page talks to, which deletes it after a few hours. Nothing is kept on this page.</footer>
 </main>
 <script src="widget.js"></script>
