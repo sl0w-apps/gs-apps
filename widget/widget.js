@@ -1,14 +1,17 @@
 /*
- * Logo: send an animated GIF from the phone to G's Dash (the home-screen widget, the cluster, and a
+ * Logo: send an animated GIF, or a still picture, from the phone to G's Dash (the home-screen widget, the cluster, and a
  * driving-mode slot when the car's Logo page was on one). Static, no secrets. The
  * car's side is kit/runtime/gif_drop.js (it says the whole exchange); this page:
  *
- *   <this page>#v=2&s=<topic>.<key>&a=<app name>&w=<px>&h=<px>   from the car's QR code (v=1: an older app, turned away)
+ *   <this page>#v=2&s=<topic>.<key>&a=<app name>&w=<px>&h=<px>&i=1   from the car's QR code (v=1: an older app, turned away;
+ *                                                                   i=1: the app takes a still picture too)
  *   <this page>                                                  typed by hand: asks for the car's 6-digit code,
  *                                                                topic + key = PBKDF2-SHA256(code, "ng_widget/code/2", 100000)
  * Sends iv | AES-256-GCM(key, gif) (additional data "ng_widget/2/gif") to https://ntfy.sh/<topic> as an
  * attachment, then AES-256-GCM(key, {t:'gif', s:<topic>, url, size, sha256, fit, name}) (additional data
  * "ng_widget/2") as a message, and waits for the car's encrypted {t:'got'} and {t:'done', ok}.
+ * A GIF goes as it is; any other picture the browser can open (JPEG, PNG, WebP, HEIC on an iPhone) is drawn at
+ * MAX_SIDE px at most and sent as a PNG, the one still format the car reads.
  * The car checks everything again; this page's checks only save a wasted trip.
  */
 (function () {
@@ -19,6 +22,7 @@
   var AAD_FILE = new TextEncoder().encode('ng_widget/2/gif');
   var CODE_SALT = 'ng_widget/code/2', CODE_ROUNDS = 100000;
   var MAX_GIF = 8 * 1024 * 1024;          // as the car (gif_drop.js MAX_GIF)
+  var MAX_SIDE = 1024;                     // a still picture, scaled down to this a side (the widget is 384 x 256)
   var WAIT_MS = 10 * 60 * 1000;
 
   function $(id) { return document.getElementById(id); }
@@ -127,8 +131,31 @@
     return '';
   }
 
-  function formPage(st, size) {
+  /** a picture that is not a GIF -> { blob (PNG), w, h }, drawn at MAX_SIDE px a side at most */
+  function toPng(f) {
+    return new Promise(function (resolve, reject) {
+      var u = URL.createObjectURL(f), img = new Image();
+      img.onload = function () {
+        var w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, MAX_SIDE / Math.max(w, h, 1));
+        var c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(w * k)); c.height = Math.max(1, Math.round(h * k));
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(u);
+        c.toBlob(function (b) { if (b) resolve({ blob: b, w: c.width, h: c.height }); else reject(new Error('could not convert it')); }, 'image/png');
+      };
+      img.onerror = function () { URL.revokeObjectURL(u); reject(new Error('this browser cannot open that picture')); };
+      img.src = u;
+    });
+  }
+  function sizeText(n) { return n < 1048576 ? Math.round(n / 1024) + ' KB' : (n / 1048576).toFixed(1) + ' MB'; }
+
+  function formPage(st, size, pictures) {
     var file = null, url = null, fit = 'cover';
+    if (!pictures) {
+      $('file').accept = 'image/gif';
+      $('pick-text').textContent = 'Choose a GIF';
+      $('lead').textContent = 'Pick an animated GIF. (Update the app in the car\u2019s Store to send a photo or a picture too.)';
+    }
     show('form');
     if (size) $('preview').style.aspectRatio = size.w + ' / ' + size.h;
     function setFit(f) {
@@ -144,21 +171,36 @@
       file = null; $('send').disabled = true; err('form-err', '');
       if (url) { URL.revokeObjectURL(url); url = null; }
       if (!f) return;
-      f.slice(0, 16).arrayBuffer().then(function (ab) {
-        var head = new Uint8Array(ab), why = gifProblem(head, f.size);
-        if (why) { err('form-err', why); $('preview').hidden = $('info').hidden = $('fit').hidden = true; return; }
-        file = f;
-        url = URL.createObjectURL(f);
+      var hide = function (why) { err('form-err', why); $('preview').hidden = $('info').hidden = $('fit').hidden = true; };
+      var ready = function (blob, w, h, name) {
+        file = { arrayBuffer: function () { return blob.arrayBuffer(); }, name: name };
+        url = URL.createObjectURL(blob);
         $('img').src = url;
         $('preview').hidden = $('fit').hidden = $('info').hidden = false;
-        $('pick-text').textContent = 'Choose another GIF';
-        $('info').textContent = cleanName(f.name) + ' · ' + (head[6] | (head[7] << 8)) + ' x ' + (head[8] | (head[9] << 8)) + ' px · ' +
-          (f.size < 1048576 ? Math.round(f.size / 1024) + ' KB' : (f.size / 1048576).toFixed(1) + ' MB');
+        $('pick-text').textContent = pictures ? 'Choose another' : 'Choose another GIF';
+        $('info').textContent = cleanName(name) + ' · ' + w + ' x ' + h + ' px · ' + sizeText(blob.size);
         $('send').disabled = false;
+      };
+      f.slice(0, 16).arrayBuffer().then(function (ab) {
+        var head = new Uint8Array(ab), sig = String.fromCharCode.apply(null, head.subarray(0, 6));
+        if (sig === 'GIF87a' || sig === 'GIF89a' || !pictures) {
+          var why = gifProblem(head, f.size);
+          if (why) { hide(why); return; }
+          ready(f, head[6] | (head[7] << 8), head[8] | (head[9] << 8), f.name);
+          return;
+        }
+        if (!f.size) { hide('That file is empty.'); return; }
+        busyPick(true);
+        toPng(f).then(function (p) {
+          busyPick(false);
+          if (p.blob.size > MAX_GIF) { hide('That picture is ' + sizeText(p.blob.size) + ' as a PNG; the car takes up to ' + MAX_GIF / 1048576 + ' MB.'); return; }
+          ready(p.blob, p.w, p.h, String(f.name || 'picture').replace(/\.[A-Za-z0-9]{1,5}$/, '') + '.png');
+        }, function (e) { busyPick(false); hide('That is not a picture this phone can open (' + e.message + '). Pick a GIF, JPEG or PNG.'); });
       });
     };
+    function busyPick(on) { $('pick-text').textContent = on ? 'Getting it ready…' : (pictures ? 'Choose a GIF or picture' : 'Choose a GIF'); }
     $('send').onclick = function () {
-      if (!file) { err('form-err', 'Choose a GIF first.'); return; }
+      if (!file) { err('form-err', pictures ? 'Choose a GIF or a picture first.' : 'Choose a GIF first.'); return; }
       $('send').disabled = true;
       send(st, file, fit);
     };
@@ -214,7 +256,7 @@
       if (c.length !== 6) { err('code-err', 'The code has 6 digits.'); return; }
       err('code-err', '');
       $('code-go').disabled = true;
-      fromCode(c).then(function (st) { formPage(st, null); }, function () { err('code-err', 'This browser cannot do that. Scan the QR code instead.'); $('code-go').disabled = false; });
+      fromCode(c).then(function (st) { formPage(st, null, true); }, function () { err('code-err', 'This browser cannot do that. Scan the QR code instead.'); $('code-go').disabled = false; });
     };
   }
 
@@ -232,7 +274,7 @@
     if (!st) { failWith('This code is not complete. Scan the code on the car’s screen again.'); return; }
     if (h.get('a')) { try { var app = cleanName(new TextDecoder().decode(fromB64u(h.get('a')))).slice(0, 40); if (app) { $('app').textContent = app + ' · logo'; document.title = app + ': send a GIF'; } } catch (e) { /* plain title */ } }
     var w = Number(h.get('w')), hh = Number(h.get('h'));
-    formPage(st, w > 0 && hh > 0 && w <= 4096 && hh <= 4096 ? { w: w, h: hh } : null);
+    formPage(st, w > 0 && hh > 0 && w <= 4096 && hh <= 4096 ? { w: w, h: hh } : null, h.get('i') === '1');
   } else {
     codePage();
   }
