@@ -3,7 +3,7 @@
  * driving-mode slot when the car's Logo page was on one). Static, no secrets. The
  * car's side is kit/runtime/gif_drop.js (it says the whole exchange); this page:
  *
- *   <this page>#v=2&s=<topic>.<key>&a=<app name>&w=<px>&h=<px>&i=2   from the car's QR code (v=1: an older app, turned away;
+ *   <this page>#v=2&s=<topic>.<key>&a=<app name>&w=<px>&h=<px>&i=1&j=1   from the car's QR code (v=1: an older app, turned away;
  *                                                                   i: the app takes a still picture too, 1 a PNG, 2 a JPEG too)
  *   <this page>                                                  typed by hand: asks for the car's 6-digit code,
  *                                                                topic + key = PBKDF2-SHA256(code, "ng_widget/code/2", 100000)
@@ -12,7 +12,7 @@
  * "ng_widget/2") as a message, and waits for the car's encrypted {t:'got'} and {t:'done', ok}.
  * A GIF goes as it is; any other picture the browser can open (JPEG, PNG, WebP, HEIC on an iPhone) is drawn at
  * MAX_SIDE px at most and sent as a JPEG when it has no see-through parts (a photo: a tenth of a PNG's size, quick over
- * the car's link) and the car takes one (i=2), else as a PNG.
+ * the car's link) and the car takes one (j=1, or i=2 from G's Dash 0.79.2 to 0.79.3), else as a PNG.
  * The car checks everything again; this page's checks only save a wasted trip.
  */
 (function () {
@@ -76,8 +76,11 @@
     });
   }
   function seal(raw, obj) { return encrypt(raw, AAD, new TextEncoder().encode(JSON.stringify(obj))).then(b64u); }
+  /** a message from the mailbox -> its object; rejects (never throws) for one that is not ours, such as the
+   *  mailbox's own note on the file just uploaded, so the wait skips it */
   function unseal(raw, text) {
-    var b = fromB64u(String(text).trim());
+    var b;
+    try { b = fromB64u(String(text).trim()); } catch (e) { return Promise.reject(e); }
     return importKey(raw).then(function (k) {
       return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b.slice(0, 12), additionalData: AAD, tagLength: 128 }, k, b.slice(12));
     }).then(function (pt) { return JSON.parse(new TextDecoder().decode(pt)); });
@@ -280,7 +283,7 @@
     if (!st) { failWith('This code is not complete. Scan the code on the car’s screen again.'); return; }
     if (h.get('a')) { try { var app = cleanName(new TextDecoder().decode(fromB64u(h.get('a')))).slice(0, 40); if (app) { $('app').textContent = app + ' · logo'; document.title = app + ': send a GIF'; } } catch (e) { /* plain title */ } }
     var w = Number(h.get('w')), hh = Number(h.get('h'));
-    formPage(st, w > 0 && hh > 0 && w <= 4096 && hh <= 4096 ? { w: w, h: hh } : null, Number(h.get('i')) >= 1, Number(h.get('i')) >= 2);
+    formPage(st, w > 0 && hh > 0 && w <= 4096 && hh <= 4096 ? { w: w, h: hh } : null, Number(h.get('i')) >= 1, Number(h.get('i')) >= 2 || h.get('j') === '1');
   } else {
     codePage();
   }
